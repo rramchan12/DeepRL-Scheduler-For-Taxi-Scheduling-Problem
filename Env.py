@@ -7,7 +7,7 @@ import random
 from itertools import product
 
 # Defining hyperparameters
-m = 5 # number of cities, ranges from 1 ..... m
+m = 5 # number of locations, ranges from 1 ..... m
 t = 24 # number of hours, ranges from 0 .... t-1
 d = 7  # number of days, ranges from 0 ... d-1
 C = 5 # Per hour fuel and other costs
@@ -38,7 +38,7 @@ class CabDriver():
         
         all_action_space = [(i,j) for i in range (1, m + 1) for j in range (1, m + 1) if i != j]
         
-        self.all_action_space.append((0,0))
+        all_action_space.append((0,0))
         
         return all_action_space
         
@@ -233,3 +233,7 @@ class CabDriver():
 
     def reset(self):
         return self.action_space, self.state_space, self.state_init
+    
+    
+    if __name__ == 'main':
+        c = 
