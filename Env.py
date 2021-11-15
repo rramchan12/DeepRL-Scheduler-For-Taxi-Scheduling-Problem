@@ -216,3 +216,6 @@ class CabDriver():
 
     def action_set_drop(self, action, drop):
         action[1] = drop
+
+    def self_state_init_for_test(self, state_value = [0,0,0]):
+        self.self_state_init = state_value
