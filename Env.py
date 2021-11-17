@@ -90,19 +90,20 @@ class CabDriver():
         """
         ride_duration = int(ride_duration)
 
-        if (time + ride_duration) < 24:
+        if (time + ride_duration) < t:
             time = time + ride_duration
             # day is unchanged
         else:
             # duration taken spreads over to subsequent days
-            # convert the time to 0-23 range
-            time = (time + ride_duration) % 24 
             
             # Get the number of days
-            num_days = (time + ride_duration) // 24
+            num_days = (time + ride_duration) // t
+            
+            # convert the time to 0-23 range
+            time = (time + ride_duration) % t 
             
             # Convert the day to 0-6 range
-            day = (day + num_days ) % 7
+            day = (day + num_days ) % d
 
         return time, day
     
